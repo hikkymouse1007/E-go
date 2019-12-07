@@ -1,11 +1,17 @@
-
   <nav>
     <div class="nav-wrapper">
-      <%= link_to "Logo", root_path, class: 'brand-logo' %>
+      <%= link_to "E-go!", root_path, class: 'brand-logo' %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><%= link_to "New", users_new_path %></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="#">About</a></li>
+      <% if logged_in? %>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
+        <li><%= link_to "Profile", current_user %></li>
+      <% else %>
+        <li><%= link_to "Signup", signup_path %></li>
+        <li><%= link_to "Login", login_path %></li>
+        <li><a href="#">Option</a></li>
+      <% end %>
       </ul>
     </div>
   </nav>
+

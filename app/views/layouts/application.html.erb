@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EGo</title>
+    <title>E-Go</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,9 @@
 
   <body>
     <%= render "layouts/header" %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+     <% end %>
     <div class="container">
       <%= yield %>
     </div>
