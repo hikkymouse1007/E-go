@@ -66,8 +66,4 @@ class UserArticlesController < ApplicationController
   def user_article_params
     params.require(:user_article).permit(:category, :title, :content, :url, :published_at, :japanese_title, :japanese_content)
   end
-
-  def correct_article
-    redirect_to(root_url)
-  end
 end
